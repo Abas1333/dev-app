@@ -34,8 +34,7 @@ steps:
     - '-c'
     - >
     # gcloud container clusters get-credentials --zone=$_ZONE $_CLUSTER;
-gcloud builds submit --config=cloudbuild.yaml \
-   --substitutions=_ZONE=us-central1-b,_CLUSTER="onlineboutique";
+gcloud builds submit --config=cloudbuild.yaml --substitutions=_ZONE=us-central1-b,_CLUSTER=onlineboutique
  
  
 gcloud container clusters get-credentials onlineboutique --zone=us-central1-b
