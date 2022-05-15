@@ -36,6 +36,11 @@ steps:
     gcloud container clusters get-credentials onlineboutique --zone=us-central1-b
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
     `gcloud builds submit --config=cloudbuild.yaml --substitutions=_ZONE=us-central1-b,_CLUSTER=onlineboutique .`
+    
+    ZONE=us-central1-b
+    gcloud container clusters create onlineboutique \
+    --project=${PROJECT_ID} --zone=${ZONE} \
+    --machine-type=e2-standard-2 --num-nodes=4
 
 # Add more power, and more time, for heavy Skaffold build
 timeout: '3600s'
