@@ -33,9 +33,9 @@ steps:
   - '-c'
   - >
     # gcloud container clusters get-credentials --zone=$_ZONE $_CLUSTER;
-    gcloud container clusters get-credentials onlineboutique1 --zone=us-central1-b
+    gcloud container clusters get-credentials onlineboutique2 --zone=us-central1-b
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
-    `gcloud builds submit --config=cloudbuild.yaml --substitutions=_ZONE=us-central1-b,_CLUSTER=onlineboutique1 .`
+    `gcloud builds submit --config=cloudbuild.yaml --substitutions=_ZONE=us-central1-b,_CLUSTER=onlineboutique2 .`
     
     
     # gcloud container clusters create onlineboutique1 --project=${PROJECT_ID} --zone=us-central1-b --machine-type=e2-standard-2 --num-nodes=4
